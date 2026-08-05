@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  if (/invite_token|recovery_token|confirmation_token/.test(location.hash)) {
+    location.replace('/admin/' + location.hash);
+  }
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pioneer Technical Institute — Craft for Self Reliance</title>
