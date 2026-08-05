@@ -1,0 +1,44 @@
+{
+  "long_term": {
+    "label": "Full-Time Courses",
+    "duration": "2–3 years training",
+    "items": [
+      "Automotive Mechanics & Driving",
+      "Welding & Fabrication",
+      "Plumbing",
+      "Electrical Installation",
+      "Building Construction",
+      "Carpentry and Joinery",
+      "Fashion and Garment Design",
+      "Stenography / Secretarial",
+      "Administration / Accountancy",
+      "Marketing and Salesmanship",
+      "Clearing and Forwarding",
+      "Hospitality and Hotel Management",
+      "Agriculture",
+      "Nursery Teacher Training"
+    ]
+  },
+  "short_term": {
+    "label": "Short-Time Courses",
+    "duration": "1 / 3 / 6 / 9 months training",
+    "items": [
+      "Driving / Riding",
+      "Hairdressing / Salon",
+      "Cookery and Catering",
+      "Computer Skills & Applications",
+      "Computer Technician",
+      "Radio / TV Maintenance & Repair",
+      "Bicycle Maintenance & Repair",
+      "Motorcycle Maintenance & Repair",
+      "Domestic Electrical Installation, Maintenance & Repair",
+      "Electric Motor and Transformer Rewinding",
+      "Welding",
+      "Carpentry",
+      "Bricklaying",
+      "Tailoring",
+      "Shoe Making and Repair",
+      "Bore Hole Maintenance and Repair"
+    ]
+  }
+}

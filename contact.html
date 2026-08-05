@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Pioneer Technical Institute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="hero-page">
+  <div class="wrap">
+    <span class="eyebrow">Contact Us</span>
+    <h1>Get in touch</h1>
+    <p>Questions about courses, admission, fees or scholarships? Reach out below.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid grid-2">
+    <div>
+      <h2>Visit or call</h2>
+      <p id="contact-address">Loading…</p>
+      <p id="contact-hours"></p>
+      <div id="contact-list" style="margin-top:24px;"></div>
+      <p style="margin-top:24px;"><strong>Email:</strong> <span id="contact-email"></span></p>
+    </div>
+
+    <div>
+      <h2>Send a message</h2>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const site = await fetchJSON("content/site.json");
+  if (!site) return;
+  document.getElementById("contact-address").textContent = site.address || "";
+  document.getElementById("contact-hours").textContent = site.hours ? `Hours: ${site.hours}` : "";
+  document.getElementById("contact-email").textContent = site.email || "";
+  const list = document.getElementById("contact-list");
+  if (site.contacts?.length) {
+    list.innerHTML = site.contacts.map(c => `
+      <div class="feature-row" style="border:none; padding:8px 0;">
+        <span style="font-family:var(--font-mono); font-size:0.8rem; color:var(--rust); min-width:140px; display:inline-block;">${esc(c.role)}</span>
+        <span>${esc(c.phone)}</span>
+      </div>`).join("");
+  }
+});
+</script>
+</body>
+</html>

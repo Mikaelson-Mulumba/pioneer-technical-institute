@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story — Pioneer Technical Institute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="hero-page">
+  <div class="wrap">
+    <span class="eyebrow">Our Story</span>
+    <h1>Craft for Self Reliance</h1>
+    <p id="about-intro">Loading…</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid grid-2">
+    <div>
+      <h2>Why Pioneer</h2>
+      <p id="about-why"></p>
+    </div>
+    <div>
+      <h2>Who we serve</h2>
+      <p id="about-target"></p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our core values</span>
+      <h2>What guides every trainee and instructor</h2>
+    </div>
+    <div class="grid grid-3" id="core-values"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid grid-2">
+    <div>
+      <h2>How we train</h2>
+      <p id="about-training"></p>
+    </div>
+    <div>
+      <h2>Accreditation</h2>
+      <p id="about-accreditation"></p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Mission & Vision</h2>
+    <p id="mission-text" style="max-width:640px;margin:0 auto 12px;"></p>
+    <p id="vision-text" style="max-width:640px;margin:0 auto;font-weight:600;color:var(--white);"></p>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const [site, about] = await Promise.all([
+    fetchJSON("content/site.json"),
+    fetchJSON("content/pages/about.json"),
+  ]);
+
+  if (about) {
+    document.getElementById("about-intro").textContent = about.intro || "";
+    document.getElementById("about-why").textContent = about.why || "";
+    document.getElementById("about-target").textContent = about.target_group || "";
+    document.getElementById("about-training").textContent = about.training || "";
+    document.getElementById("about-accreditation").textContent = about.accreditation || "";
+
+    const cv = document.getElementById("core-values");
+    if (about.core_values?.length) {
+      cv.innerHTML = about.core_values.map((v, i) => `
+        <div class="feature-row" style="border:none;flex-direction:column;">
+          <span class="feature-num">0${i + 1}</span>
+          <h3 style="margin-top:6px;">${esc(v)}</h3>
+        </div>`).join("");
+    } else {
+      emptyState(cv, "Core values will appear here once added.");
+    }
+  }
+
+  if (site) {
+    document.getElementById("mission-text").textContent = site.mission || "";
+    document.getElementById("vision-text").textContent = site.vision ? `Vision: ${site.vision}` : "";
+  }
+});
+</script>
+</body>
+</html>

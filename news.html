@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News — Pioneer Technical Institute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="hero-page">
+  <div class="wrap">
+    <span class="eyebrow">News</span>
+    <h1>What's happening at Pioneer</h1>
+    <p>Announcements, events and updates from campus.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="grid grid-3" id="news-list"></div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const data = await fetchJSON("content/posts.json");
+  const grid = document.getElementById("news-list");
+  const posts = data?.posts || [];
+  if (posts.length) {
+    const sorted = [...posts].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+    grid.innerHTML = sorted.map(p => `
+      <div class="card news-card">
+        ${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.title)}">` : ""}
+        <div class="card-body">
+          <span class="date">${esc(p.date || "")}</span>
+          <h3>${esc(p.title)}</h3>
+          <p>${esc(p.excerpt || "")}</p>
+        </div>
+      </div>`).join("");
+  } else {
+    emptyState(grid, "No news posts yet — add the first one from the control panel.");
+  }
+});
+</script>
+</body>
+</html>

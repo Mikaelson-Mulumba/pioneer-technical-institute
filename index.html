@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pioneer Technical Institute — Craft for Self Reliance</title>
+<meta name="description" content="Pioneer Technical Institute, Iganga — vocational training in automotive, welding, construction, fashion, ICT and more. Craft for Self Reliance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow" id="hero-eyebrow">Iganga, Uganda</span>
+    <h1 id="hero-heading">Craft for Self Reliance</h1>
+    <p class="lead" id="hero-sub">Loading…</p>
+    <div class="hero-actions">
+      <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+      <a href="courses.html" class="btn btn-light">Browse Courses</a>
+    </div>
+  </div>
+</section>
+
+<section class="stat-strip">
+  <div class="wrap">
+    <div class="stat-row" id="stat-row"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What we teach</span>
+      <h2>Full-time & short courses, taught by hand</h2>
+      <p>75% hands-on training, 25% theory — every course runs its own production unit serving the public.</p>
+    </div>
+    <div class="grid grid-4" id="featured-courses"></div>
+    <div style="margin-top:28px; text-align:center;">
+      <a href="courses.html" class="btn btn-outline">View all courses</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why Pioneer</span>
+      <h2>Two certificates. Real workplace exposure.</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="feature-row" style="border:none;">
+        <div>
+          <h3>Dual accreditation</h3>
+          <p>Trainees sit Trade Test Exams under both DIT and UBTEB, earning two certificates plus an industrial testimonial.</p>
+        </div>
+      </div>
+      <div class="feature-row" style="border:none;">
+        <div>
+          <h3>Industrial attachment</h3>
+          <p>After a minimum of 9 months, trainees are placed with industry partners for real practical exposure.</p>
+        </div>
+      </div>
+      <div class="feature-row" style="border:none;">
+        <div>
+          <h3>Open to everyone</h3>
+          <p>Youth 14+, any academic background, including those with disabilities and special needs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Meet the team</span>
+      <h2>Led by experienced heads of department</h2>
+    </div>
+    <div class="grid grid-4" id="featured-staff"></div>
+    <div style="margin-top:28px; text-align:center;">
+      <a href="staff.html" class="btn btn-outline">Meet all staff</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Ready to learn a trade that pays?</h2>
+    <p>Admission runs all year round. Visit the campus or call the Director to get started.</p>
+    <a href="admissions.html" class="btn btn-light" style="margin-top:18px;">Start your application</a>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const [site, home, courses, staff] = await Promise.all([
+    fetchJSON("content/site.json"),
+    fetchJSON("content/pages/home.json"),
+    fetchJSON("content/courses.json"),
+    fetchJSON("content/staff.json"),
+  ]);
+
+  if (home) {
+    document.getElementById("hero-eyebrow").textContent = home.hero_eyebrow || "Iganga, Uganda";
+    document.getElementById("hero-heading").textContent = home.hero_heading || "Craft for Self Reliance";
+    document.getElementById("hero-sub").textContent = home.hero_sub || "";
+  }
+
+  if (site && site.stats) {
+    document.getElementById("stat-row").innerHTML = site.stats.map(s =>
+      `<div class="stat"><b>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`
+    ).join("");
+  }
+
+  const courseGrid = document.getElementById("featured-courses");
+  if (courses) {
+    const items = (courses.long_term?.items || []).slice(0, 4);
+    courseGrid.innerHTML = items.map(name => `
+      <div class="card course-card">
+        <div class="card-body">
+          <span class="card-tag">Full-Time</span>
+          <h3>${esc(name)}</h3>
+        </div>
+      </div>`).join("");
+  } else {
+    emptyState(courseGrid, "Courses will appear here once added.");
+  }
+
+  const staffGrid = document.getElementById("featured-staff");
+  if (staff && staff.members?.length) {
+    staffGrid.innerHTML = staff.members.slice(0, 4).map(m => `
+      <div class="card staff-card">
+        ${m.photo ? `<img src="${esc(m.photo)}" alt="${esc(m.name)}">` : `<div style="aspect-ratio:1/1;background:var(--cream-dim);"></div>`}
+        <div class="card-body">
+          <h3>${esc(m.name)}</h3>
+          <span class="role">${esc(m.title)}</span>
+        </div>
+      </div>`).join("");
+  } else {
+    emptyState(staffGrid, "Staff profiles will appear here once added.");
+  }
+});
+</script>
+</body>
+</html>

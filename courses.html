@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses — Pioneer Technical Institute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="hero-page">
+  <div class="wrap">
+    <span class="eyebrow">Courses</span>
+    <h1>Learn a trade that pays</h1>
+    <p>75% hands-on job learning, 25% theory — every course runs a production unit serving the public.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" id="lt-duration">Full-Time Courses</span>
+      <h2 id="lt-label">Full-Time Courses</h2>
+    </div>
+    <div class="grid grid-3" id="long-term-list"></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" id="st-duration">Short-Time Courses</span>
+      <h2 id="st-label">Short-Time Courses</h2>
+    </div>
+    <div class="grid grid-3" id="short-term-list"></div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Found your course?</h2>
+    <p>Admission runs all year round. Start your application today.</p>
+    <a href="admissions.html" class="btn btn-light" style="margin-top:18px;">Go to Admissions</a>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const courses = await fetchJSON("content/courses.json");
+  const ltGrid = document.getElementById("long-term-list");
+  const stGrid = document.getElementById("short-term-list");
+
+  if (courses?.long_term) {
+    document.getElementById("lt-label").textContent = courses.long_term.label;
+    document.getElementById("lt-duration").textContent = courses.long_term.duration;
+    ltGrid.innerHTML = courses.long_term.items.map(name => `
+      <div class="card course-card"><div class="card-body">
+        <span class="card-tag">Full-Time</span><h3>${esc(name)}</h3>
+      </div></div>`).join("");
+  } else {
+    emptyState(ltGrid, "Full-time courses will appear here once added.");
+  }
+
+  if (courses?.short_term) {
+    document.getElementById("st-label").textContent = courses.short_term.label;
+    document.getElementById("st-duration").textContent = courses.short_term.duration;
+    stGrid.innerHTML = courses.short_term.items.map(name => `
+      <div class="card course-card short"><div class="card-body">
+        <span class="card-tag">Short-Time</span><h3>${esc(name)}</h3>
+      </div></div>`).join("");
+  } else {
+    emptyState(stGrid, "Short-time courses will appear here once added.");
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded photos are stored in the repo, and the public URL
+# path the site's HTML uses to display them.
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: https://pioneertechnicalinstitute.ac.ug
+display_url: https://pioneertechnicalinstitute.ac.ug
+
+collections:
+
+  - name: "site_settings"
+    label: "Site Settings"
+    files:
+      - file: "content/site.json"
+        label: "Contact & General Info"
+        name: "site"
+        fields:
+          - { label: "Institute Name", name: "name", widget: "string" }
+          - { label: "Motto", name: "motto", widget: "string" }
+          - { label: "Vision", name: "vision", widget: "text" }
+          - { label: "Mission", name: "mission", widget: "text" }
+          - { label: "Address", name: "address", widget: "text" }
+          - { label: "Operating Hours", name: "hours", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Main Phone", name: "phone", widget: "string" }
+          - label: "Contact Numbers"
+            name: "contacts"
+            widget: "list"
+            fields:
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Accreditation Text", name: "accreditation", widget: "text" }
+          - label: "Homepage Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+
+  - name: "staff"
+    label: "Staff"
+    files:
+      - file: "content/staff.json"
+        label: "Staff Directory"
+        name: "staff"
+        fields:
+          - label: "Members"
+            name: "members"
+            widget: "list"
+            summary: "{{name}} — {{title}}"
+            fields:
+              - { label: "Full Name", name: "name", widget: "string" }
+              - { label: "Title / Role", name: "title", widget: "string" }
+              - { label: "Department", name: "department", widget: "string", required: false }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  - name: "courses"
+    label: "Courses"
+    files:
+      - file: "content/courses.json"
+        label: "Course List"
+        name: "courses"
+        fields:
+          - label: "Full-Time Courses"
+            name: "long_term"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "label", widget: "string" }
+              - { label: "Duration Text", name: "duration", widget: "string" }
+              - { label: "Course Names", name: "items", widget: "list", field: { label: "Course", name: "item", widget: "string" } }
+          - label: "Short-Time Courses"
+            name: "short_term"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "label", widget: "string" }
+              - { label: "Duration Text", name: "duration", widget: "string" }
+              - { label: "Course Names", name: "items", widget: "list", field: { label: "Course", name: "item", widget: "string" } }
+
+  - name: "news"
+    label: "News"
+    files:
+      - file: "content/posts.json"
+        label: "News Posts"
+        name: "posts"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{title}} — {{date}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+              - { label: "Cover Image", name: "image", widget: "image", required: false }
+              - { label: "Excerpt", name: "excerpt", widget: "text" }
+              - { label: "Full Story", name: "body", widget: "markdown", required: false }
+
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - file: "content/gallery.json"
+        label: "Photo Gallery"
+        name: "gallery"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            summary: "{{caption}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/pages/home.json"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - { label: "Hero Eyebrow", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Subtext", name: "hero_sub", widget: "text" }
+
+      - file: "content/pages/about.json"
+        label: "About / Our Story Page"
+        name: "about"
+        fields:
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Why Pioneer", name: "why", widget: "text" }
+          - { label: "Target Group", name: "target_group", widget: "text" }
+          - { label: "Core Values", name: "core_values", widget: "list", field: { label: "Value", name: "value", widget: "string" } }
+          - { label: "How We Train", name: "training", widget: "text" }
+          - { label: "Accreditation", name: "accreditation", widget: "text" }
+
+      - file: "content/pages/admissions.json"
+        label: "Admissions Page"
+        name: "admissions"
+        fields:
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Bursary Info", name: "bursary", widget: "text" }
+          - { label: "How To Apply Steps", name: "how_to_apply", widget: "list", field: { label: "Step", name: "step", widget: "string" } }

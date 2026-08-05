@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Pioneer Technical Institute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="hero-page">
+  <div class="wrap">
+    <span class="eyebrow">Gallery</span>
+    <h1>Life on campus</h1>
+    <p>A look at trainees and instructors at work.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const data = await fetchJSON("content/gallery.json");
+  const grid = document.getElementById("gallery-grid");
+  const images = data?.images || [];
+  if (images.length) {
+    grid.innerHTML = images.map(g => `<img src="${esc(g.image)}" alt="${esc(g.caption || '')}" loading="lazy">`).join("");
+  } else {
+    emptyState(grid, "Photos will appear here once added from the control panel.");
+  }
+});
+</script>
+</body>
+</html>
