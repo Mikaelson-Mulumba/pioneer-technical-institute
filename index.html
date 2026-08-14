@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  if (/invite_token|recovery_token|confirmation_token/.test(location.hash)) {
+    location.replace('/admin/' + location.hash);
+  }
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pioneer Technical Institute — Craft for Self Reliance</title>
@@ -121,15 +126,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   const courseGrid = document.getElementById("featured-courses");
-  if (courses) {
-    const items = (courses.long_term?.items || []).slice(0, 4);
-    courseGrid.innerHTML = items.map(name => `
-      <div class="card course-card">
+  const courseItems = (courses?.courses || []).slice(0, 4);
+  if (courseItems.length) {
+    courseGrid.innerHTML = courseItems.map(c => `
+      <a href="course-${c.slug}.html" class="card course-card">
         <div class="card-body">
-          <span class="card-tag">Full-Time</span>
-          <h3>${esc(name)}</h3>
+          <span class="card-tag">${esc(c.level)}</span>
+          <h3>${esc(c.name)}</h3>
         </div>
-      </div>`).join("");
+      </a>`).join("");
   } else {
     emptyState(courseGrid, "Courses will appear here once added.");
   }

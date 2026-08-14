@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student's Charter — Pioneer Technical Institute</title>
+<meta name="description" content="The rights and responsibilities of every trainee at Pioneer Technical Institute, Iganga, Uganda.">
+<link rel="canonical" href="https://pioneertechnicalinstitute.ac.ug/students-charter.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="hero-page">
+  <div class="wrap">
+    <span class="eyebrow">Students</span>
+    <h1>Student's Charter</h1>
+    <p>What every trainee can expect from PTI, and what PTI expects in return.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" id="page-sections"></div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Ready to take the next step?</h2>
+    <p>Admission runs all year round — apply online or browse the course catalog.</p>
+    <div class="hero-actions" style="justify-content:center; margin-top:18px;">
+      <a href="apply.html" class="btn btn-light">Apply Now</a>
+      <a href="courses.html" class="btn btn-light">Browse Courses</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const data = await fetchJSON("content/pages/students-charter.json");
+  const box = document.getElementById("page-sections");
+  if (data?.sections?.length) {
+    box.innerHTML = data.sections.map(s => `
+      <div style="max-width:820px; margin-bottom:36px;">
+        <h2 style="font-size:1.5rem;">${esc(s.heading)}</h2>
+        <p style="font-size:1.02rem;">${esc(s.body)}</p>
+      </div>`).join("");
+  } else {
+    emptyState(box, "Content for this page will appear here once added.");
+  }
+});
+</script>
+</body>
+</html>

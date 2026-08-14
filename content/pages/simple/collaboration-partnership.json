@@ -1,0 +1,32 @@
+{
+  "eyebrow": "About",
+  "heading": "Collaboration & Partnership",
+  "sub": "The examining bodies, accreditation partners, and global platforms PTI works with to keep training current.",
+  "seo_title": "Collaboration & Partnership — Pioneer Technical Institute, Iganga Uganda",
+  "seo_description": "Pioneer Technical Institute's partnerships with UBTEB, DIT, Cisco, IBM, and Coursera — bringing globally recognized certification to vocational training in Iganga, Uganda.",
+  "seo_keywords": "Pioneer Technical Institute partnerships, UBTEB, DIT, Cisco Networking Academy Uganda, IBM SkillsBuild Uganda",
+  "sections": [
+    {
+      "heading": "Examining & Accrediting Bodies",
+      "body": "",
+      "list": [
+        "Ministry of Education and Sports — registration as a Private TVET Provider",
+        "UBTEB (Uganda Business and Technical Examinations Board) — National Certificate examinations",
+        "DIT (Directorate of Industrial Training) — Trade Test examinations and certification"
+      ]
+    },
+    {
+      "heading": "Global Technology Partners",
+      "body": "To keep ICT training current with what employers actually need, PTI offers pathways aligned with international certification bodies:",
+      "list": [
+        "Cisco Networking Academy — networking and cybersecurity curricula",
+        "IBM SkillsBuild — IT support and data analytics foundations",
+        "Coursera (Google & Meta Career Certificates) — IT support and mobile/front-end development"
+      ]
+    },
+    {
+      "heading": "Looking to Partner With Us?",
+      "body": "PTI welcomes partnerships with employers seeking skilled graduates, industry bodies offering attachment placements, and organisations bringing new accreditation or funding opportunities. Contact the Director's office to discuss collaboration."
+    }
+  ]
+}

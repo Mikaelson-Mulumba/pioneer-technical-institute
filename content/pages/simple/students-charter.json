@@ -1,0 +1,36 @@
+{
+  "eyebrow": "Students",
+  "heading": "Student's Charter",
+  "sub": "The rights and responsibilities every PTI trainee can expect.",
+  "seo_title": "Student's Charter — Pioneer Technical Institute, Iganga Uganda",
+  "seo_description": "Pioneer Technical Institute's Student's Charter — the rights and responsibilities of every trainee during their training in Iganga, Uganda.",
+  "seo_keywords": "PTI student charter, Pioneer Technical Institute student rights, vocational student responsibilities Uganda",
+  "sections": [
+    {
+      "heading": "What You Can Expect From PTI",
+      "body": "",
+      "list": [
+        "Access to hands-on, production-unit based training in your chosen course",
+        "Instructors and department heads available for academic and welfare support",
+        "Fair, transparent assessment aligned with UBTEB/DIT standards",
+        "A safe, respectful, and inclusive training environment",
+        "Clear information about fees, timelines, and certification"
+      ]
+    },
+    {
+      "heading": "What PTI Expects From You",
+      "body": "",
+      "list": [
+        "Regular attendance and punctuality in workshop/class sessions",
+        "Respect for instructors, fellow trainees, and Institute property",
+        "Honesty in coursework and examinations",
+        "Safe and responsible use of tools, equipment, and production-unit resources",
+        "Payment of fees according to the agreed schedule"
+      ]
+    },
+    {
+      "heading": "Raising a Concern",
+      "body": "Any trainee with a concern about their training, welfare, or treatment should raise it with their department head in the first instance, or directly with the Director's office if unresolved."
+    }
+  ]
+}

@@ -3,10 +3,35 @@
 
 const NAV_LINKS = [
   { href: "index.html", label: "Home" },
-  { href: "about.html", label: "Our Story" },
-  { href: "courses.html", label: "Courses" },
-  { href: "admissions.html", label: "Admissions" },
-  { href: "staff.html", label: "Staff" },
+  { label: "About", children: [
+      { href: "about.html", label: "About Us" },
+      { href: "our-story.html", label: "Our Story" },
+      { href: "staff.html", label: "Staff" },
+      { href: "governance.html", label: "Governance" },
+      { href: "collaboration-and-partnership.html", label: "Collaboration & Partnership" },
+    ] },
+  { label: "Admissions", children: [
+      { href: "junior-certificate.html", label: "Junior Certificate Courses" },
+      { href: "national-certificate.html", label: "National Certificate Courses" },
+      { href: "short-courses.html", label: "Short Courses" },
+      { href: "courses.html", label: "All Courses" },
+      { href: "admissions.html", label: "How To Apply" },
+    ] },
+  { label: "Academic", children: [
+      { href: "how-you-will-learn.html", label: "How You Will Learn" },
+    ] },
+  { label: "Students", children: [
+      { href: "students.html", label: "Students" },
+      { href: "students-charter.html", label: "Student's Charter" },
+      { href: "life-at-pti.html", label: "Life at PTI" },
+    ] },
+  { label: "Get To Work", children: [
+      { href: "about-wil.html", label: "About Work-Integrated Learning" },
+      { href: "how-wil-works.html", label: "How WIL Works" },
+      { href: "key-steps-in-wil.html", label: "Key Steps in WIL" },
+      { href: "get-to-work.html", label: "Get to Work" },
+      { href: "your-call.html", label: "Your Call" },
+    ] },
   { href: "news.html", label: "News" },
   { href: "gallery.html", label: "Gallery" },
   { href: "contact.html", label: "Contact" },
@@ -19,10 +44,22 @@ function currentPage() {
 
 function renderHeader() {
   const cur = currentPage();
-  const links = NAV_LINKS.map(
-    (l) =>
-      `<a href="${l.href}" class="${l.href === cur ? "active" : ""}">${l.label}</a>`
-  ).join("");
+
+  function linkHTML(l) {
+    return `<a href="${l.href}" class="${l.href === cur ? "active" : ""}">${l.label}</a>`;
+  }
+
+  const links = NAV_LINKS.map((l) => {
+    if (!l.children) return linkHTML(l);
+    const isActiveGroup = l.children.some((c) => c.href === cur);
+    return `
+      <div class="nav-item has-dropdown ${isActiveGroup ? "active" : ""}">
+        <button type="button" class="nav-dropdown-toggle">${l.label} <span class="caret">▾</span></button>
+        <div class="nav-dropdown-menu">
+          ${l.children.map(linkHTML).join("")}
+        </div>
+      </div>`;
+  }).join("");
 
   document.getElementById("site-header").innerHTML = `
     <div class="nav-row">
@@ -32,9 +69,23 @@ function renderHeader() {
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰ Menu</button>
       <nav class="main-nav" id="mainNav">${links}
-        <a href="admissions.html#apply" class="btn btn-primary" style="margin:14px 24px; border-color: var(--amber); background: var(--amber); color: var(--charcoal);">Apply Now</a>
+        <a href="apply.html" class="btn btn-primary" style="margin:14px 24px; border-color: var(--amber); background: var(--amber); color: var(--charcoal);">Apply Now</a>
       </nav>
     </div>`;
+
+  // Dropdown toggle: click to open/close (works for touch and desktop alike)
+  document.querySelectorAll(".nav-dropdown-toggle").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const item = btn.closest(".nav-item");
+      const wasOpen = item.classList.contains("open");
+      document.querySelectorAll(".nav-item.open").forEach((i) => i.classList.remove("open"));
+      if (!wasOpen) item.classList.add("open");
+    });
+  });
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".nav-item.open").forEach((i) => i.classList.remove("open"));
+  });
 
   const toggle = document.getElementById("navToggle");
   const nav = document.getElementById("mainNav");

@@ -63,23 +63,59 @@ collections:
     label: "Courses"
     files:
       - file: "content/courses.json"
-        label: "Course List"
+        label: "Course Catalog"
         name: "courses"
         fields:
-          - label: "Full-Time Courses"
-            name: "long_term"
-            widget: "object"
+          - label: "Courses"
+            name: "courses"
+            widget: "list"
+            summary: "{{name}} — {{level}} ({{category}})"
             fields:
-              - { label: "Section Label", name: "label", widget: "string" }
-              - { label: "Duration Text", name: "duration", widget: "string" }
-              - { label: "Course Names", name: "items", widget: "list", field: { label: "Course", name: "item", widget: "string" } }
-          - label: "Short-Time Courses"
-            name: "short_term"
-            widget: "object"
-            fields:
-              - { label: "Section Label", name: "label", widget: "string" }
-              - { label: "Duration Text", name: "duration", widget: "string" }
-              - { label: "Course Names", name: "items", widget: "list", field: { label: "Course", name: "item", widget: "string" } }
+              - { label: "URL Slug (unique, no spaces — used in the page link)", name: "slug", widget: "string" }
+              - { label: "Course Name", name: "name", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - "Engineering & Technical Trades"
+                  - "Business"
+                  - "Hospitality & Hotel Management"
+                  - "Technology & ICT"
+                  - "Agriculture"
+                  - "Nursery Teaching & Early Childhood Education"
+              - { label: "Level", name: "level", widget: "string", hint: "e.g. Junior Certificate, National Certificate, Short Course" }
+              - { label: "Duration", name: "duration", widget: "string", hint: "e.g. 2 years, 3 months, 6 weeks" }
+              - { label: "Credential Awarded", name: "credential", widget: "string", required: false }
+              - { label: "Delivery Mode", name: "delivery", widget: "string", required: false, hint: "e.g. On-Campus, Online, Hybrid" }
+              - { label: "Language of Instruction", name: "language", widget: "string", required: false, default: "English" }
+              - { label: "Entry Requirement", name: "entry_requirement", widget: "string", required: false, hint: "e.g. P7 for Junior, S4/UCE for National, Open to all for Short courses" }
+              - { label: "Pathway / Progression Note", name: "pathway_note", widget: "text", required: false, hint: "Explain how a trainee progresses — e.g. Junior → National → Diploma/Bachelor's, or the First Class fast-track to Bachelor's" }
+              - label: "Industries Graduates Work In"
+                name: "industries"
+                widget: "list"
+                required: false
+                field: { label: "Industry", name: "industry", widget: "string" }
+              - { label: "Quick Outcome Line", name: "quick_outcome", widget: "string", required: false, hint: "One sentence: Finish this course and you can work as..." }
+              - { label: "Course Photo", name: "image", widget: "image", required: false }
+              - { label: "About This Programme", name: "about", widget: "text" }
+              - { label: "SEO Page Title", name: "seo_title", widget: "string", required: false, hint: "Shown in Google search results / browser tab" }
+              - { label: "SEO Meta Description", name: "seo_description", widget: "text", required: false, hint: "1-2 sentences shown under the title in Google search results" }
+              - { label: "SEO Keywords", name: "seo_keywords", widget: "string", required: false, hint: "Comma-separated search terms" }
+              - label: "Admission Requirements"
+                name: "admission_requirements"
+                widget: "list"
+                field: { label: "Requirement", name: "requirement", widget: "string" }
+              - label: "What You Will Learn"
+                name: "what_you_will_learn"
+                widget: "list"
+                field: { label: "Learning Outcome", name: "outcome", widget: "string" }
+              - label: "Career Opportunities"
+                name: "career_opportunities"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Career/Role Title", name: "title", widget: "string" }
+                  - { label: "Main Responsibilities", name: "responsibility", widget: "text" }
 
   - name: "news"
     label: "News"
@@ -143,3 +179,70 @@ collections:
           - { label: "Intro", name: "intro", widget: "text" }
           - { label: "Bursary Info", name: "bursary", widget: "text" }
           - { label: "How To Apply Steps", name: "how_to_apply", widget: "list", field: { label: "Step", name: "step", widget: "string" } }
+
+      - file: "content/pages/our-story.json"
+        label: "Our Story Page"
+        name: "our_story"
+        fields: &sections_field
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            summary: "{{heading}}"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+
+      - file: "content/pages/governance.json"
+        label: "Governance Page"
+        name: "governance"
+        fields: *sections_field
+
+      - file: "content/pages/collaboration-and-partnership.json"
+        label: "Collaboration & Partnership Page"
+        name: "collaboration_and_partnership"
+        fields: *sections_field
+
+      - file: "content/pages/how-you-will-learn.json"
+        label: "How You Will Learn Page"
+        name: "how_you_will_learn"
+        fields: *sections_field
+
+      - file: "content/pages/students.json"
+        label: "Students Page"
+        name: "students"
+        fields: *sections_field
+
+      - file: "content/pages/students-charter.json"
+        label: "Student's Charter Page"
+        name: "students_charter"
+        fields: *sections_field
+
+      - file: "content/pages/life-at-pti.json"
+        label: "Life at PTI Page"
+        name: "life_at_pti"
+        fields: *sections_field
+
+      - file: "content/pages/about-wil.json"
+        label: "About WIL Page"
+        name: "about_wil"
+        fields: *sections_field
+
+      - file: "content/pages/how-wil-works.json"
+        label: "How WIL Works Page"
+        name: "how_wil_works"
+        fields: *sections_field
+
+      - file: "content/pages/key-steps-in-wil.json"
+        label: "Key Steps in WIL Page"
+        name: "key_steps_in_wil"
+        fields: *sections_field
+
+      - file: "content/pages/get-to-work.json"
+        label: "Get to Work Page"
+        name: "get_to_work"
+        fields: *sections_field
+
+      - file: "content/pages/your-call.json"
+        label: "Your Call Page"
+        name: "your_call"
+        fields: *sections_field

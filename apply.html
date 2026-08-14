@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Online — Pioneer Technical Institute, Iganga Uganda</title>
+<meta name="description" content="Apply online to Pioneer Technical Institute in Iganga, Uganda. Choose a course, fill in your details, and our admissions team will contact you.">
+<meta name="keywords" content="apply Pioneer Technical Institute, PTI Iganga application, vocational institute application Uganda, TVET admission Uganda">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="hero-page">
+  <div class="wrap">
+    <span class="eyebrow">Online Application</span>
+    <h1>Apply to Pioneer Technical Institute</h1>
+    <p>Admission runs all year round. Fill in the form below — our admissions team will reach out within 48 hours to confirm your place and next steps.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid grid-2" style="align-items:start;">
+    <div>
+      <h2>Application Form</h2>
+      <form name="application" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="application">
+        <p class="hidden" style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+        <div class="field-row">
+          <div>
+            <label for="full_name">Full Name</label>
+            <input type="text" id="full_name" name="full_name" required>
+          </div>
+          <div>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option>Female</option>
+              <option>Male</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email">
+          </div>
+        </div>
+
+        <div>
+          <label for="course_category">Department</label>
+          <select id="course_category" name="course_category" required>
+            <option value="">Select a department</option>
+            <option>Engineering & Technical Trades</option>
+            <option>Business</option>
+            <option>Hospitality & Hotel Management</option>
+            <option>Technology & ICT</option>
+            <option>Agriculture</option>
+            <option>Nursery Teaching & Early Childhood Education</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="course_name">Course of Interest</label>
+          <input type="text" id="course_name" name="course_name" placeholder="e.g. Motor Vehicle Mechanics and Driving — National Certificate" required>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <label for="level">Applying For</label>
+            <select id="level" name="level">
+              <option>Junior Certificate</option>
+              <option>National Certificate</option>
+              <option>Short Course</option>
+              <option>Professional / Online Certificate</option>
+            </select>
+          </div>
+          <div>
+            <label for="highest_qualification">Highest Qualification So Far</label>
+            <select id="highest_qualification" name="highest_qualification">
+              <option>P7 (PLE)</option>
+              <option>S4 (UCE)</option>
+              <option>S6 (UACE)</option>
+              <option>Junior Certificate</option>
+              <option>National Certificate / Diploma</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="message">Anything else we should know?</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="justify-self:start;">Submit Application</button>
+      </form>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="card-body">
+          <h3>Before you apply</h3>
+          <ul class="req-list" style="margin-top:14px;">
+            <li>Junior Certificate courses: P7 (PLE) or equivalent, minimum age 14.</li>
+            <li>National Certificate courses: S4 (UCE) or equivalent — open to all grades.</li>
+            <li>Short courses and professional certificates: open to everyone, no formal requirement.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="margin-top:20px;">
+        <div class="card-body">
+          <h3>Prefer to talk to someone?</h3>
+          <p id="adm-contact-line">Loading contact details…</p>
+          <a href="contact.html" class="btn btn-outline" style="margin-top:10px;">Contact the Institute</a>
+        </div>
+      </div>
+      <div class="card" style="margin-top:20px;">
+        <div class="card-body">
+          <h3>Not sure which course yet?</h3>
+          <p>Browse the full course catalog — every course lists its entry requirement and career pathway.</p>
+          <a href="courses.html" class="btn btn-outline" style="margin-top:10px;">Browse Courses</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const site = await fetchJSON("content/site.json");
+  if (site) {
+    const director = site.contacts?.find(c => c.role === "Director");
+    document.getElementById("adm-contact-line").textContent =
+      `Call ${director?.phone || site.phone} or email ${site.email}.`;
+  }
+});
+</script>
+</body>
+</html>

@@ -41,7 +41,16 @@ collection — full add / edit / delete, no code:
 
 - **Site Settings** — contact numbers, address, hours, mission/vision, homepage stats
 - **Staff** — add/remove staff, edit name/title/phone/photo
-- **Courses** — add/remove courses in either the full-time or short-time list
+- **Courses** — full catalog, one entry per course. Each course has: category,
+  level, duration, credential, delivery mode, a photo, an "About this
+  programme" write-up, an Admission Requirements list, a "What You Will
+  Learn" list, and a Career Opportunities table. Staff can add a brand-new
+  course, delete one, or edit any field/photo — no code needed. Every course
+  automatically gets its own detail page at `course-detail.html?slug=...`
+  (linked from the Courses page and the homepage), styled like a university
+  programme page: hero, About, Quick Facts, Admission Requirements, What
+  You'll Learn, Career Opportunities, an Apply/Contact call-to-action, and
+  Related Programmes from the same category.
 - **News** — add/edit/delete news posts with photo, date, excerpt, full story
 - **Gallery** — add/remove photos with captions
 - **Pages** — edit the wording on the Home, About, and Admissions pages

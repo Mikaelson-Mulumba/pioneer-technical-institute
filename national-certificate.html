@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Courses — Pioneer Technical Institute</title>
+<title>National Certificate Courses — Pioneer Technical Institute, Iganga</title>
+<meta name="description" content="All National Certificate courses at Pioneer Technical Institute, Iganga — entry with S4/UCE, 2-year UBTEB-certified training.">
+<link rel="canonical" href="https://pioneertechnicalinstitute.ac.ug/national-certificate.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -14,16 +16,15 @@
 
 <section class="hero-page">
   <div class="wrap">
-    <span class="eyebrow">Courses</span>
-    <h1>Learn a trade that pays</h1>
-    <p>75% hands-on job learning, 25% theory — every course runs a production unit serving the public. Tap any course for full details: admission requirements, what you'll learn, and career opportunities.</p>
+    <span class="eyebrow">Admissions</span>
+    <h1>National Certificate Courses</h1>
+    <p>Entry: S4 (UCE) or equivalent, open to all grades. 2-year certification under UBTEB across Engineering, Business, Hospitality, Technology, Agriculture, and Nursery Teaching.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <input type="text" id="course-search" placeholder="Search by course name…" style="margin-bottom:20px;">
-    <div id="category-filters" style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px;"></div>
+    <input type="text" id="course-search" placeholder="Search by course name…" style="margin-bottom:28px;">
     <div id="course-sections"></div>
   </div>
 </section>
@@ -31,8 +32,8 @@
 <section class="cta-band">
   <div class="wrap">
     <h2>Found your course?</h2>
-    <p>Admission runs all year round. Start your application today.</p>
-    <a href="admissions.html" class="btn btn-light" style="margin-top:18px;">Go to Admissions</a>
+    <p>Admission runs all year round.</p>
+    <a href="apply.html" class="btn btn-light" style="margin-top:18px;">Apply Now</a>
   </div>
 </section>
 
@@ -43,9 +44,10 @@
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
   const data = await fetchJSON("content/courses.json");
-  const courses = data?.courses || [];
+  const all = data?.courses || [];
+  const re = new RegExp("National");
+  const courses = all.filter(c => re.test(c.level));
   const sectionsEl = document.getElementById("course-sections");
-  const filtersEl = document.getElementById("category-filters");
   const searchEl = document.getElementById("course-search");
 
   if (!courses.length) {
@@ -57,7 +59,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function cardHTML(c) {
     return `
-      <a href="course-${c.slug}.html" class="card course-card ${c.level === 'Short Course' ? 'short' : ''}">
+      <a href="course-${c.slug}.html" class="card course-card">
         <div class="card-body">
           <span class="card-tag">${esc(c.level)} · ${esc(c.duration)}</span>
           <h3 style="font-size:1.1rem;">${esc(c.name)}</h3>
@@ -65,15 +67,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       </a>`;
   }
 
-  function render(filterCat, query) {
+  function render(query) {
     const q = (query || "").toLowerCase().trim();
     let html = "";
     categories.forEach(cat => {
-      if (filterCat && filterCat !== cat) return;
       const items = courses.filter(c => c.category === cat && (!q || c.name.toLowerCase().includes(q)));
       if (!items.length) return;
       html += `
-        <div class="section-head" style="margin-top:44px;">
+        <div class="section-head" style="margin-top:36px;">
           <span class="eyebrow">${esc(cat)}</span>
           <h2>${esc(cat)}</h2>
         </div>
@@ -82,22 +83,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     sectionsEl.innerHTML = html || `<div class="empty-state">No courses match your search.</div>`;
   }
 
-  filtersEl.innerHTML = `<button class="btn btn-outline filter-btn active" data-cat="">All</button>` +
-    categories.map(cat => `<button class="btn btn-outline filter-btn" data-cat="${esc(cat)}">${esc(cat)}</button>`).join("");
-
-  let currentCat = "";
-  filtersEl.addEventListener("click", (e) => {
-    const btn = e.target.closest(".filter-btn");
-    if (!btn) return;
-    filtersEl.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    currentCat = btn.dataset.cat;
-    render(currentCat, searchEl.value);
-  });
-
-  searchEl.addEventListener("input", () => render(currentCat, searchEl.value));
-
-  render("", "");
+  searchEl.addEventListener("input", () => render(searchEl.value));
+  render("");
 });
 </script>
 </body>
