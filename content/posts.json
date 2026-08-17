@@ -1,3 +1,10 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "title": "Pioneer ",
+      "date": "2026-08-17",
+      "image": "/assets/uploads/img_2948.jpeg",
+      "excerpt": "Graduation "
+    }
+  ]
 }
