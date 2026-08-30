@@ -1,23 +1,47 @@
 {
-  "name": "Pioneer Technical Institute",
-  "motto": "Craft for Self Reliance",
   "vision": "To empower the youths to succeed in the world of work",
+  "name": "Pioneer Technical Institute",
   "mission": "To empower the youth to succeed in the world of work through a dynamic business, technical and vocational education and training program, thereby cultivating and energizing the spirit of self-enterprise.",
-  "address": "Iganga Town, Kaliro Road, Nkono 1 zone, about 300m from Kaliro Road Market. P.O. Box 643, Iganga",
-  "hours": "10:00 AM – 10:00 PM, Monday – Sunday",
-  "email": "pnrtechnical@gmail.com",
+  "motto": "Craft for Self Reliance",
   "phone": "+256 772-503724",
+  "hours": "08:00 AM – 05:00 PM, Monday –Friday",
   "contacts": [
-    { "role": "Director", "phone": "+256 772-503724" },
-    { "role": "Gen. Administrator", "phone": "+256 774-497858" },
-    { "role": "Bursar", "phone": "0393-208323 / 0789-089308" },
-    { "role": "Dean of Students", "phone": "+256 774-895014" }
+    {
+      "role": "Director",
+      "phone": "+256 772-503724"
+    },
+    {
+      "role": "Gen. Administrator",
+      "phone": "+256 774-497858"
+    },
+    {
+      "role": "Bursar",
+      "phone": "0393-208323 / 0789-089308"
+    },
+    {
+      "role": "Dean of Students",
+      "phone": "+256 774-895014"
+    }
   ],
-  "accreditation": "Registered by the Ministry of Education and Sports (PSS/P/34). UBTEB examination center for Technical (UBT125) and Business (UBB093). Also MAC127 for the Directorate of Industrial Training (MOES). A member of UGAPRIV.",
+  "address": "Iganga Town, Kaliro Road, Nkono 1 zone, about 300m from Kaliro Road Market. P.O. Box 643, Iganga",
+  "accreditation": "Registered by the Ministry of Education and Sports (PSS/P/34). UBTEB examination center for Technical (UBT125) and Business (UBB093). A member of UGAPRIV.",
+  "email": "pnrtechnical@gmail.com",
   "stats": [
-    { "value": "30+", "label": "Courses Offered" },
-    { "value": "742", "label": "Students Trained" },
-    { "value": "228", "label": "Success Stories" },
-    { "value": "7+", "label": "Years of Experience" }
+    {
+      "value": "30+",
+      "label": "Courses Offered"
+    },
+    {
+      "value": "742",
+      "label": "Students Trained"
+    },
+    {
+      "value": "228",
+      "label": "Success Stories"
+    },
+    {
+      "value": "7+",
+      "label": "Years of Experience"
+    }
   ]
 }
