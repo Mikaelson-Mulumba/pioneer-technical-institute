@@ -1,13 +1,67 @@
 {
   "members": [
-    { "name": "Hajj Yusuf Bachu", "title": "Director & Founder", "department": "Administration", "phone": "0772-503724", "photo": "" },
-    { "name": "Mariam Bachu", "title": "HOD Hotel Management and Catering", "department": "Hospitality", "phone": "0783-000256", "photo": "" },
-    { "name": "Baraza Micheal", "title": "HOD Welding & Fabrication", "department": "Welding & Fabrication", "phone": "0705-714887", "photo": "" },
-    { "name": "Ogwang Paul", "title": "HOD Automotive Mechanics", "department": "Automotive", "phone": "0775-080930", "photo": "" },
-    { "name": "Ouko Robert", "title": "HOD Building & Construction", "department": "Building & Construction", "phone": "", "photo": "" },
-    { "name": "Kabangirisa Grace", "title": "HOD Plumbing & Pipe Fitting", "department": "Plumbing", "phone": "0783-296312", "photo": "" },
-    { "name": "Habbeba Patrick", "title": "HOD Business Department", "department": "Business", "phone": "0754-939163", "photo": "" },
-    { "name": "Katende Abdulkharim", "title": "HOD ICT – Information Computer Technology", "department": "ICT", "phone": "0783-196474 / 0703-435578", "photo": "" },
-    { "name": "Abeja Florence", "title": "HOD Fashion and Design", "department": "Fashion & Design", "phone": "0704-759441", "photo": "" }
+    {
+      "name": "Hajj Yusuf Bachu",
+      "title": "Director & Founder",
+      "department": "Administration",
+      "phone": "0772-503724",
+      "photo": "/assets/uploads/img_0204.jpg"
+    },
+    {
+      "name": "Mariam Bachu",
+      "title": "HOD Hotel Management and Catering",
+      "department": "Hospitality",
+      "phone": "0783-000256",
+      "photo": ""
+    },
+    {
+      "name": "Baraza Micheal",
+      "title": "HOD Welding & Fabrication",
+      "department": "Welding & Fabrication",
+      "phone": "0705-714887",
+      "photo": ""
+    },
+    {
+      "name": "Ogwang Paul",
+      "title": "HOD Automotive Mechanics",
+      "department": "Automotive",
+      "phone": "0775-080930",
+      "photo": ""
+    },
+    {
+      "name": "Ouko Robert",
+      "title": "HOD Building & Construction",
+      "department": "Building & Construction",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "name": "Kabangirisa Grace",
+      "title": "HOD Plumbing & Pipe Fitting",
+      "department": "Plumbing",
+      "phone": "0783-296312",
+      "photo": ""
+    },
+    {
+      "name": "Habbeba Patrick",
+      "title": "HOD Business Department",
+      "department": "Business",
+      "phone": "0754-939163",
+      "photo": ""
+    },
+    {
+      "name": "Katende Abdulkharim",
+      "title": "HOD ICT – Information Computer Technology",
+      "department": "ICT",
+      "phone": "0783-196474 / 0703-435578",
+      "photo": ""
+    },
+    {
+      "name": "Abeja Florence",
+      "title": "HOD Fashion and Design",
+      "department": "Fashion & Design",
+      "phone": "0704-759441",
+      "photo": ""
+    }
   ]
 }
