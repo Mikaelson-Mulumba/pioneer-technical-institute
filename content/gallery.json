@@ -1,9 +1,40 @@
 {
   "images": [
-    { "image": "https://pioneertechnicalinstitute.org/wp-content/uploads/2022/09/IMG_20220906_193046_098-1024x768.jpg", "caption": "Campus activity" },
-    { "image": "https://pioneertechnicalinstitute.org/wp-content/uploads/elementor/thumbs/IMG_20220906_194643_205-puea137mr4yjbx9zvsvm5gs5g2x7jbt0zpcf2ti5uw.jpg", "caption": "Campus activity" },
-    { "image": "https://pioneertechnicalinstitute.org/wp-content/uploads/elementor/thumbs/IMG_1652-1-scaled-pvokxiv3mnzdj7oers0lzjohlkzhdj4s1vo1r6eejs.jpg", "caption": "Trainees at work" },
-    { "image": "https://pioneertechnicalinstitute.org/wp-content/uploads/elementor/thumbs/IMG_8107-pvogzzc0hs7z939ya3g20ripbsmpac7vlb4v669lig.jpg", "caption": "Trainees at work" },
-    { "image": "https://pioneertechnicalinstitute.org/wp-content/uploads/2022/09/IMG_20220906_193108_691-300x225.jpg", "caption": "Campus activity" }
+    {
+      "image": "https://pioneertechnicalinstitute.org/wp-content/uploads/2022/09/IMG_20220906_193046_098-1024x768.jpg",
+      "caption": "Campus activity"
+    },
+    {
+      "caption": "Graduation ",
+      "image": "/assets/uploads/img_0460.jpg"
+    },
+    {
+      "image": "https://pioneertechnicalinstitute.org/wp-content/uploads/elementor/thumbs/IMG_20220906_194643_205-puea137mr4yjbx9zvsvm5gs5g2x7jbt0zpcf2ti5uw.jpg",
+      "caption": "Campus activity"
+    },
+    {
+      "image": "https://pioneertechnicalinstitute.org/wp-content/uploads/elementor/thumbs/IMG_1652-1-scaled-pvokxiv3mnzdj7oers0lzjohlkzhdj4s1vo1r6eejs.jpg",
+      "caption": "Trainees at work"
+    },
+    {
+      "image": "https://pioneertechnicalinstitute.org/wp-content/uploads/elementor/thumbs/IMG_8107-pvogzzc0hs7z939ya3g20ripbsmpac7vlb4v669lig.jpg",
+      "caption": "Trainees at work"
+    },
+    {
+      "image": "https://pioneertechnicalinstitute.org/wp-content/uploads/2022/09/IMG_20220906_193108_691-300x225.jpg",
+      "caption": "Campus activity"
+    },
+    {
+      "image": "/assets/uploads/img_0462.jpg"
+    },
+    {
+      "image": "/assets/uploads/img_0447-1-.jpg"
+    },
+    {
+      "image": "/assets/uploads/img_0434.jpg"
+    },
+    {
+      "image": "/assets/uploads/img_0368.jpg"
+    }
   ]
 }
