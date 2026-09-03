@@ -211,8 +211,10 @@ nav.main-nav > a:hover, nav.main-nav > a.active { color: var(--amber); border-co
 
 /* ---------- Hero ---------- */
 .hero {
-  background: var(--charcoal) url("../uploads/copilot_image_1788440236777~2.jpeg") center/cover no-repeat;
-  color: var(--cream);
+  background: url("../uploads/copilot_image_1788440236777~2.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 90px 0 70px;
   position: relative;
   overflow: hidden;
