@@ -29,6 +29,12 @@
       "photo": ""
     },
     {
+      "name": "Mr.Iswaya Gerald ",
+      "title": "Principal ",
+      "phone": "0785 477500",
+      "photo": "/assets/uploads/copilot_image_1788263149354~3.jpeg"
+    },
+    {
       "name": "Ouko Robert",
       "title": "HOD Building & Construction",
       "department": "Building & Construction",
@@ -62,12 +68,6 @@
       "department": "Fashion & Design",
       "phone": "0704-759441",
       "photo": ""
-    },
-    {
-      "name": "Mr.Iswaya Gerald ",
-      "title": "Principal ",
-      "phone": "0785 477500",
-      "photo": "/assets/uploads/copilot_image_1788263149354~2.jpeg"
     }
   ]
 }
