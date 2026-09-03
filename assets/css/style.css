@@ -6,15 +6,15 @@
    ============================================================ */
 
 :root {
-  --charcoal: #1B365D;
-  --charcoal-soft: #16294a;
-  --steel: #444C5C;
+ --charcoal: #01041b;
+  --charcoal-soft: #ba7d03;
+  --steel: #041a47;
   --steel-light: #9CA3AF;
   --cream: #F0F9FF;
   --cream-dim: #E5E7EB;
-  --amber: #00A0DF;
-  --amber-dark: #0080B3;
-  --rust: #FF671F;
+  --amber: #eaa801;
+  --amber-dark: #a1b300;
+  --rust:  #01041b;
   --white: #FFFFFF;
 
   --font-display: "Archivo Black", "Arial Black", sans-serif;
