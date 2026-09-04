@@ -3,7 +3,7 @@ backend:
   repo: Mikaelson-Mulumba/pioneer-technical-institute
   branch: main
   base_url: https://pti-cms-auth.vercel.app
-  auth_endpoint: auth
+  auth_endpoint: api/auth
 
 # Where uploaded photos are stored in the repo, and the public URL
 # path the site's HTML uses to display them.
