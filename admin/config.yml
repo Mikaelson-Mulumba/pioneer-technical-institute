@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Mikaelson-Mulumba/pioneer-technical-institute
   branch: main
+  base_url: https://pti-cms-auth.liamivanmikaelson.workers.dev
+  auth_endpoint: auth
 
 # Where uploaded photos are stored in the repo, and the public URL
 # path the site's HTML uses to display them.
