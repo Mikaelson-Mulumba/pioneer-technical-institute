@@ -124,7 +124,7 @@ function renderFooter() {
       </div>
       <div class="footer-bottom">
         <span>&copy; <span id="year"></span> Pioneer Technical Institute, Iganga</span>
-        <span>PSS/P/34 &middot; UBTEB UBT125 / UBB093 &middot; DIT MAC127</span>
+        <span>PSS/P/34 &middot; UBTEB UBT125 &middot; UBB093 </span>
       </div>
     </div>`;
   document.getElementById("year").textContent = new Date().getFullYear();
