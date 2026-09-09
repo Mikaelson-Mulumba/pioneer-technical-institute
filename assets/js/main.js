@@ -65,7 +65,7 @@ function renderHeader() {
     <div class="nav-row">
       <a href="index.html" class="brand">
         <img src="assets/uploads/pioneer.png" alt="Pioneer Technical Institute" class="brand-badge">
-        <span class="brand-text">Pioneer Technical Institute<span>Craft for Self Reliance</span></span>
+        
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰ Menu</button>
       <nav class="main-nav" id="mainNav">${links}
