@@ -64,7 +64,7 @@ function renderHeader() {
   document.getElementById("site-header").innerHTML = `
     <div class="nav-row">
       <a href="index.html" class="brand">
-        <span class="brand-mark">PTI</span>
+        <img src="assets/uploads/pioneer.png" alt="Pioneer Technical Institute" class="brand-badge">
         <span class="brand-text">Pioneer Technical Institute<span>Craft for Self Reliance</span></span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰ Menu</button>
