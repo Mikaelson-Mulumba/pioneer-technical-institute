@@ -126,7 +126,8 @@ header.site-header {
   gap: 12px;
 }
 .brand-badge{
-   height: 40px;
+   border-radius: 4px;
+   height: 50px;
    width: auto;
    background-color: white;
 }
