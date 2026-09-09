@@ -128,6 +128,7 @@ header.site-header {
 .brand-badge{
    height: 40px;
    width: auto;
+   background-color: white;
 }
 .brand-mark {
   width: 40px; height: 40px;
