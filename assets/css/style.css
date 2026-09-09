@@ -124,7 +124,10 @@ header.site-header {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--cream);
+}
+.brand-badge{
+   height: 40px;
+   width: auto;
 }
 .brand-mark {
   width: 40px; height: 40px;
