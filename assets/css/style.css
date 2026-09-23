@@ -263,7 +263,7 @@ nav.main-nav > a:hover, nav.main-nav > a.active { color: var(--amber); border-co
   text-align: center;
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
-  color: #1a1a1a;
+  color: white;
 }
 
 .ticker-wrapper {
