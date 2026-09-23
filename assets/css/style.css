@@ -253,6 +253,10 @@ nav.main-nav > a:hover, nav.main-nav > a.active { color: var(--amber); border-co
    background: #01041b;
    
 }
+.trending{
+  padding-top: 20px;
+  background-color: #01041b;
+}
 
 .trending h2 {
   text-align: center;
@@ -281,8 +285,8 @@ nav.main-nav > a:hover, nav.main-nav > a.active { color: var(--amber); border-co
 
 .update-card {
   position: relative;
-  width: 300px;
-  height: 190px;
+  width: 380px;
+  height: 240px;
   border-radius: 14px;
   overflow: hidden;
   flex-shrink: 0;
@@ -348,8 +352,8 @@ nav.main-nav > a:hover, nav.main-nav > a.active { color: var(--amber); border-co
 
 @media (max-width: 600px) {
   .update-card {
-    width: 220px;
-    height: 150px;
+    width: 280px;
+    height: 190px;
   }
 }
 
