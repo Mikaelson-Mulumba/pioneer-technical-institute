@@ -1,17 +1,18 @@
 {
   "posts": [
     {
-      "title": "Pioneer ",
-      "date": "2026-08-17",
-      "image": "/assets/uploads/img_2948.jpeg",
-      "excerpt": "Graduation "
-    },
-    {
       "image": "/assets/uploads/pioneer.png",
       "title": "Badge",
       "date": "2026-09-09",
       "excerpt": "Badge",
       "body": ""
+    },
+    {
+      "title": "September Modular Assessment Ongoing ",
+      "date": "2026-09-23",
+      "excerpt": "September Modular Assessment ",
+      "body": "**September Modular Assessment — Practical Skills in Action**\n\n\n\nA glimpse into our September Modular Assessment, showcasing learners putting their practical knowledge and technical skills into action.\n\nThe assessment involved hands-on activities, teamwork, measurement, fabrication, construction, and practical application of the skills acquired during training.",
+      "image": "/assets/uploads/file_000000008c7881fd99ea2e7a5aae266b.png"
     }
   ]
 }
