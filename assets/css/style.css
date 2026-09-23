@@ -256,8 +256,7 @@ nav.main-nav > a:hover, nav.main-nav > a.active { color: var(--amber); border-co
 .trending{
   padding-top: 20px;
   background-color: #01041b;
-   height: 90vh;
-   border-bottom: 3px solid var(--amber);
+   border-bottom: 3px solid white;
 }
 
 .trending h2 {
