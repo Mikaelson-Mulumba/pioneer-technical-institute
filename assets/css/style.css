@@ -249,6 +249,10 @@ nav.main-nav > a:hover, nav.main-nav > a.active { color: var(--amber); border-co
 }
 .hero-page h1 { color: var(--white); }
 .hero-page p { color: var(--cream-dim); max-width: 620px; }
+.trending{
+   background: #01041b;
+   
+}
 
 .trending h2 {
   text-align: center;
