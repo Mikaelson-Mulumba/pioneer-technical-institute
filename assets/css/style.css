@@ -250,6 +250,106 @@ nav.main-nav > a:hover, nav.main-nav > a.active { color: var(--amber); border-co
 .hero-page h1 { color: var(--white); }
 .hero-page p { color: var(--cream-dim); max-width: 620px; }
 
+.trending h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #1a1a1a;
+}
+
+.ticker-wrapper {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.ticker-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: scroll 35s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.update-card {
+  position: relative;
+  width: 300px;
+  height: 190px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: crossfade 9s infinite;
+}
+
+.bg-layer:nth-child(1) { animation-delay: 0s; }
+.bg-layer:nth-child(2) { animation-delay: 3s; }
+.bg-layer:nth-child(3) { animation-delay: 6s; }
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1) 60%, transparent);
+  color: #fff;
+}
+
+.overlay p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.tag {
+  background: #e63946;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.03em;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes crossfade {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  30%  { opacity: 1; }
+  35%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@media (max-width: 600px) {
+  .update-card {
+    width: 220px;
+    height: 150px;
+  }
+}
+
+
 /* ---------- Stat strip ---------- */
 .stat-strip {
   background: var(--amber);
