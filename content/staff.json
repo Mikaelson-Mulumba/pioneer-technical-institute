@@ -26,34 +26,34 @@
       "title": "HOD Automotive Mechanics",
       "department": "Automotive",
       "phone": "0775-080930",
-      "photo": ""
+      "photo": "/assets/uploads/file_000000004500820ab56613ed9a14fca4.png"
     },
     {
       "name": "Mr.Iswaya Gerald ",
       "title": "Principal ",
       "phone": "0785 477500",
-      "photo": "/assets/uploads/copilot_image_1788263149354~3.jpeg"
+      "photo": "/assets/uploads/file_0000000098b481f58548658dc231a748.png"
     },
     {
       "name": "Mr. Edechu Enock",
       "title": "HOD Building & Construction",
       "department": "Building & Construction",
       "phone": "",
-      "photo": ""
+      "photo": "/assets/uploads/file_0000000012cc8230b1006b0341fb65a9.png"
     },
     {
       "name": "Kankubisa Grace",
       "title": "HOD Plumbing & Pipe Fitting",
       "department": "Plumbing",
       "phone": "0783-296312",
-      "photo": ""
+      "photo": "/assets/uploads/file_00000000a2e48211b605708c11f1be0e.png"
     },
     {
       "name": "Habbeba Moses Patrick",
       "title": "HOD Business Department",
       "department": "Business",
       "phone": "0754-939163",
-      "photo": ""
+      "photo": "/assets/uploads/file_00000000e1d482119d4e491c947f756c.png"
     },
     {
       "name": "Katende Abdulkharim",
@@ -87,6 +87,42 @@
       "name": "Mr. CHirengeti Sande",
       "title": "HOD Fashion and Garment Design",
       "photo": "/assets/uploads/img-20260924-wa0006.jpg"
+    },
+    {
+      "name": "Mr. Bakaki Dan",
+      "title": "Instructor Motor Vehicle Mechanics",
+      "department": "Motor Vehicle Mechanics",
+      "photo": "/assets/uploads/file_0000000033ec820d9efe5e40c1e58359.png"
+    },
+    {
+      "name": "Mrs. Muyaka Harriet",
+      "title": "Head of Nursery Teaching",
+      "department": "Early Childhood Department",
+      "photo": "/assets/uploads/file_00000000e02881f6ac4aeb5a778d9400.png"
+    },
+    {
+      "name": "Mr. Bwiire Frank",
+      "title": "Head Of Motor Bike Mechanics",
+      "department": "Motor Bike Mechanics",
+      "photo": "/assets/uploads/file_0000000028b481f49b1ab2c1e6d1fb6c.png"
+    },
+    {
+      "name": "Mr. Ahmed Bachu",
+      "title": "Head Of Carpentry And Joinery",
+      "photo": "/assets/uploads/file_000000007b6c81f4bb087b6aacec401e.png",
+      "department": "Carpentry And Joinery"
+    },
+    {
+      "name": "Mrs. Abeja Florence",
+      "title": "Instructor ",
+      "department": "Garment, Fashion desigon",
+      "photo": "/assets/uploads/file_0000000087d48207bb9b43e44f37a2ba.png"
+    },
+    {
+      "name": "Mrs. Atukunyu Janet",
+      "title": "Instructor",
+      "department": "Plumbing and Pipe fitting",
+      "photo": "/assets/uploads/file_00000000971881fdb8f94306c9db81b1.png"
     }
   ]
 }
