@@ -397,15 +397,10 @@ nav.main-nav > a:hover, nav.main-nav > a.active { color: var(--amber); border-co
 .path-card img {
    
   width: 100%;
-  aspect-ratio: 4 / 3;   /* fixes a real height instead of "auto" so the card can't be empty */
-  object-fit: cover;     /* image fills that box completely, no gaps */
+  height: auto;    /* image fills that box completely, no gaps */
   display: block;
 }
-.path-card img.infographic {
-   aspect-ratio:3 /4;
-   object-fit:contain;
-   background-color: #002366;
-}
+
 .path-label {
   font-size: 1.1rem;
   font-weight: 600;
