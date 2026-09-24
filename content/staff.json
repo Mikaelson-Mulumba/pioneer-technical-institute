@@ -35,21 +35,21 @@
       "photo": "/assets/uploads/copilot_image_1788263149354~3.jpeg"
     },
     {
-      "name": "Ouko Robert",
+      "name": "Mr. Edechu Enock",
       "title": "HOD Building & Construction",
       "department": "Building & Construction",
       "phone": "",
       "photo": ""
     },
     {
-      "name": "Kabangirisa Grace",
+      "name": "Kankubisa Grace",
       "title": "HOD Plumbing & Pipe Fitting",
       "department": "Plumbing",
       "phone": "0783-296312",
       "photo": ""
     },
     {
-      "name": "Habbeba Patrick",
+      "name": "Habbeba Moses Patrick",
       "title": "HOD Business Department",
       "department": "Business",
       "phone": "0754-939163",
@@ -60,7 +60,7 @@
       "title": "HOD ICT – Information Computer Technology",
       "department": "ICT",
       "phone": "0783-196474 / 0703-435578",
-      "photo": ""
+      "photo": "/assets/uploads/img-20260924-wa0001.jpg"
     },
     {
       "name": "Mrs. Amina Namaganda",
@@ -78,6 +78,14 @@
       "name": "Mr. Isabirye ",
       "title": "Head of Accounting ",
       "photo": "/assets/uploads/copilot_image_1788416305412~3.jpeg"
+    },
+    {
+      "name": "Mr.Daniel",
+      "title": "HOD Agriculture practice"
+    },
+    {
+      "name": "Mr. CHirengeti Sande",
+      "title": "HOD Fashion and Garment Design"
     }
   ]
 }
