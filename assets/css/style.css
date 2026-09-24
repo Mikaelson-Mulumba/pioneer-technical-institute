@@ -376,7 +376,7 @@ nav.main-nav > a:hover, nav.main-nav > a.active { color: var(--amber); border-co
 }
 
 .path-card {
-   padding:8px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
