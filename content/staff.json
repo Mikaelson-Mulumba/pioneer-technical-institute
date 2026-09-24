@@ -8,11 +8,29 @@
       "photo": "/assets/uploads/copilot_image_1788440236777~2.jpeg"
     },
     {
+      "name": "Mr.Iswaya Gerald ",
+      "title": "Principal ",
+      "phone": "0785 477500",
+      "photo": "/assets/uploads/file_0000000098b481f58548658dc231a748.png"
+    },
+    {
       "name": "Mariam Bachu",
       "title": "HOD Hotel Management and Catering",
       "department": "Hospitality",
       "phone": "0783-000256",
       "photo": "/assets/uploads/copilot_image_1788263315240~3.jpeg"
+    },
+    {
+      "name": "Mr. Isabirye Ismail",
+      "title": "Head of Accounting ",
+      "photo": "/assets/uploads/copilot_image_1788416305412~3.jpeg"
+    },
+    {
+      "name": "Habbeba Moses Patrick",
+      "title": "HOD Business Department",
+      "department": "Business",
+      "phone": "0754-939163",
+      "photo": "/assets/uploads/file_00000000e1d482119d4e491c947f756c.png"
     },
     {
       "name": "Baraza Micheal",
@@ -29,12 +47,6 @@
       "photo": "/assets/uploads/file_000000004500820ab56613ed9a14fca4.png"
     },
     {
-      "name": "Mr.Iswaya Gerald ",
-      "title": "Principal ",
-      "phone": "0785 477500",
-      "photo": "/assets/uploads/file_0000000098b481f58548658dc231a748.png"
-    },
-    {
       "name": "Mr. Edechu Enock",
       "title": "HOD Building & Construction",
       "department": "Building & Construction",
@@ -47,13 +59,6 @@
       "department": "Plumbing",
       "phone": "0783-296312",
       "photo": "/assets/uploads/file_00000000a2e48211b605708c11f1be0e.png"
-    },
-    {
-      "name": "Habbeba Moses Patrick",
-      "title": "HOD Business Department",
-      "department": "Business",
-      "phone": "0754-939163",
-      "photo": "/assets/uploads/file_00000000e1d482119d4e491c947f756c.png"
     },
     {
       "name": "Katende Abdulkharim",
@@ -75,11 +80,6 @@
       "photo": "/assets/uploads/copilot_image_1788415777234~2.jpeg"
     },
     {
-      "name": "Mr. Isabirye Ismail",
-      "title": "Head of Accounting ",
-      "photo": "/assets/uploads/copilot_image_1788416305412~3.jpeg"
-    },
-    {
       "name": "Mr.Daniel",
       "title": "HOD Agriculture practice"
     },
@@ -87,12 +87,6 @@
       "name": "Mr. CHirengeti Sande",
       "title": "HOD Fashion and Garment Design",
       "photo": "/assets/uploads/img-20260924-wa0006.jpg"
-    },
-    {
-      "name": "Mr. Bakaki Dan",
-      "title": "Instructor Motor Vehicle Mechanics",
-      "department": "Motor Vehicle Mechanics",
-      "photo": "/assets/uploads/file_0000000033ec820d9efe5e40c1e58359.png"
     },
     {
       "name": "Mrs. Muyaka Harriet",
@@ -123,6 +117,12 @@
       "title": "Instructor",
       "department": "Plumbing and Pipe fitting",
       "photo": "/assets/uploads/file_00000000971881fdb8f94306c9db81b1.png"
+    },
+    {
+      "name": "Mr. Bakaki Dan",
+      "title": "Instructor Motor Vehicle Mechanics",
+      "department": "Motor Vehicle Mechanics",
+      "photo": "/assets/uploads/file_0000000033ec820d9efe5e40c1e58359.png"
     }
   ]
 }
