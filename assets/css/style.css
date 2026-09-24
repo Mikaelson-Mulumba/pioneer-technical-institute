@@ -364,6 +364,7 @@ nav.main-nav > a:hover, nav.main-nav > a.active { color: var(--amber); border-co
 }
 
 .explore-path {
+   background-color: #01041b;
   padding: 2rem;
   text-align: center;
 }
