@@ -16,7 +16,13 @@
   --amber-dark: #a1b300;
   --rust:  #01041b;
   --white: #FFFFFF;
-
+ --news-navy: #10142b;
+    --news-orange: #ea6a2c;
+    --news-orange-dark: #d1591f;
+    --news-bg: #f3f1ea;
+    --news-card-bg: #ffffff;
+    --news-text: #1c1f2e;
+    --news-muted: #6b7080;
   --font-display: "Archivo Black", "Arial Black", sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", "Courier New", monospace;
@@ -572,6 +578,214 @@ section.tight { padding: 48px 0; }
     border: none;
     cursor: pointer;
     line-height: 1;
+  }
+
+
+.news-list {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px;
+    background: var(--news-bg);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .news-item {
+    background: var(--news-card-bg);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(16, 20, 43, 0.08);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .news-item:hover {
+    box-shadow: 0 8px 24px rgba(16, 20, 43, 0.14);
+    transform: translateY(-2px);
+  }
+
+  .news-summary {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+
+  .news-thumb {
+    position: relative;
+    background: #e7e4da;
+  }
+
+  /* Image auto-sizes to its own aspect ratio — no fixed height, no cropping
+     beyond the sensible cap below so the list stays scannable. */
+  .news-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 380px;
+    object-fit: cover;
+  }
+
+  .news-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--news-orange);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 999px;
+  }
+
+  .news-summary-text {
+    padding: 18px 20px 16px;
+  }
+
+  .news-headline {
+    margin: 0 0 6px;
+    font-size: 1.25rem;
+    color: var(--news-navy);
+    line-height: 1.3;
+  }
+
+  .news-excerpt {
+    margin: 0 0 12px;
+    color: var(--news-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .news-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--news-orange-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* ---------- Popup modal ---------- */
+
+  .news-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(16, 20, 43, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease;
+    z-index: 1000;
+  }
+
+  .news-modal-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .news-modal {
+    background: var(--news-card-bg);
+    border-radius: 16px;
+    max-width: 720px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9) translateY(10px);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  }
+
+  .news-modal-backdrop.active .news-modal {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+
+  .news-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(16, 20, 43, 0.55);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .news-modal-img {
+    width: 100%;
+    height: auto;
+    max-height: 340px;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .news-modal-body {
+    padding: 22px 24px 26px;
+  }
+
+  .news-modal-body h2 {
+    margin: 0 0 12px;
+    color: var(--news-navy);
+    font-size: 1.4rem;
+  }
+
+  .news-modal-body p {
+    color: var(--news-text);
+    line-height: 1.6;
+    margin: 0 0 16px;
+  }
+
+  .related-heading {
+    margin: 4px 0 10px;
+    font-size: 0.9rem;
+    color: var(--news-navy);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  /* Related images: auto-adjusting masonry grid, each image keeps its
+     natural aspect ratio (no fixed tile size, no cropping). */
+  .related-images {
+    column-count: 2;
+    column-gap: 10px;
+  }
+
+  .related-images img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    break-inside: avoid;
+  }
+
+  @media (max-width: 600px) {
+    .news-summary-text { padding: 16px 16px 14px; }
+    .news-modal-body { padding: 18px 18px 22px; }
+  }
+
+  @media (max-width: 480px) {
+    .related-images { column-count: 1; }
+  }
   }
 /* ---------- Forms ---------- */
 form { display: grid; gap: 16px; }
