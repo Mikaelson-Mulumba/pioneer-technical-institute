@@ -20,11 +20,57 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="gallery-grid" id="gallery-grid"></div>
+
+<section class="gallery">
+  <h2 class="gallery-title">September Modular Assessment 2026</h2>
+  <div class="gallery-grid">
+    <img src="../assets/uploads/file_00000000b39081f583c7facbffc19bd1.png" alt="Image 6" loading="lazy">
+    <img src="../assets/uploads/file_00000000fdd8820d8f970a8c0c883958.png" alt="Image 7" loading="lazy">
+    <img src="../assets/uploads/file_000000002b04820e9e443384c2a90961.png" alt="Image 8" loading="lazy">
+    <img src="../assets/uploads/file_000000008c7881fd99ea2e7a5aae266b.png" alt="Image 9" loading="lazy">
+    <img src="../assets/uploads/file_00000000167c81f48ea1b22ae60b834a.png" alt="Image 10" loading="lazy">
+    <img src="../assets/uploads/file_00000000791c820a99f45f6f65899604.png" alt="Image 11" loading="lazy">
+    <img src="../assets/uploads/file_00000000267481fd90c6b907fd42c14a.png" alt="Image 12" loading="lazy">
+     <img src="../assets/uploads/file_00000000384481f58512063f5bc23641.png" alt="Image 12" loading="lazy"> 
+     <img src="../assets/uploads/file_00000000629081fd83a5957e25b0193f.png" alt="Image 12" loading="lazy"> 
+     <img src="../assets/uploads/file_000000003898821083e13a3217b888d5.png" alt="Image 12" loading="lazy">
+       <img src="../assets/uploads/file_00000000073882118945cbf27855bd93.png" alt="Image 12" loading="lazy">
   </div>
 </section>
+
+
+<section class="gallery">
+  <h2 class="gallery-title">Ariel View </h2>
+  <div class="gallery-grid">
+    <img src="../assets/uploads/dji_fly_20250925_093706_6_1758817781391_photo.jpg" alt="Image 1" loading="lazy">
+    <img src="../assets/uploads/5J3A0649.jpg" alt="Image 2" loading="lazy">
+    <img src="../assets/uploads/5J3A0647.jpg" alt="Image 3" loading="lazy">
+    <img src="../assets/uploads/dji_fly_20250925_093854_10_1758817712867_photo.jpg" alt="Image 4" loading="lazy">
+    <img src="../assets/uploads/dji_fly_20250925_133328_35_1758817442618_photo.jpg" alt="Image 5" loading="lazy">
+  </div>
+</section>
+
+<section class="gallery">
+  <h2 class="gallery-title">2025 Graduation celebrations</h2>
+  <div class="gallery-grid">
+    <img src="../assets/uploads/IMG_0127.jpg" alt="Image 6" loading="lazy">
+    <img src="../assets/uploads/IMG_0204.jpg" alt="Image 7" loading="lazy">
+    <img src="../assets/uploads/IMG_0368.jpg" alt="Image 8" loading="lazy">
+    <img src="../assets/uploads/IMG_0434.jpg" alt="Image 9" loading="lazy">
+    <img src="../assets/uploads/IMG_0447.jpg" alt="Image 10" loading="lazy">
+    <img src="../assets/uploads/IMG_0459.jpg" alt="Image 11" loading="lazy">
+    <img src="../assets/uploads/IMG_0460.jpg" alt="Image 12" loading="lazy">
+     <img src="../assets/uploads/IMG_0462.jpg" alt="Image 12" loading="lazy"> 
+     <img src="../assets/uploads/IMG_0465.jpg" alt="Image 12" loading="lazy"> 
+     <img src="../assets/uploads/IMG_0466.jpg" alt="Image 12" loading="lazy">
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
 
 <footer class="site-footer" id="site-footer"></footer>
 
@@ -41,6 +87,34 @@ document.addEventListener("DOMContentLoaded", async () => {
     emptyState(grid, "Photos will appear here once added from the control panel.");
   }
 });
+
+   (function () {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    // Event delegation on the whole document: works for any number of
+    // .gallery-grid sections added now or later, no per-section wiring needed.
+    document.addEventListener('click', (e) => {
+      if (e.target.matches('.gallery-grid img')) {
+        lightboxImg.src = e.target.src;
+        lightboxImg.alt = e.target.alt;
+        lightbox.classList.add('active');
+      }
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  })();
 </script>
 </body>
 </html>
