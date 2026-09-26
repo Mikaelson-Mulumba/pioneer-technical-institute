@@ -1,20 +1,3 @@
 {
-  "images": [
-    {
-      "caption": "Graduation ",
-      "image": "/assets/uploads/img_0460.jpg"
-    },
-    {
-      "image": "/assets/uploads/img_0462.jpg"
-    },
-    {
-      "image": "/assets/uploads/img_0447-1-.jpg"
-    },
-    {
-      "image": "/assets/uploads/img_0434.jpg"
-    },
-    {
-      "image": "/assets/uploads/img_0368.jpg"
-    }
-  ]
+  "images": []
 }
