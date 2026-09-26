@@ -20,11 +20,82 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="grid grid-3" id="news-list"></div>
-  </div>
+
+<section class="news-list">
+
+  <article class="news-item">
+    <button class="news-summary">
+      <div class="news-thumb">
+        <img src="../assets/uploads/file_0000000022cc8211a9c6c3ad49e21f39.png" alt="Headline 1 photo" loading="lazy">
+        <span class="news-tag">News</span>
+      </div>
+      <div class="news-summary-text">
+        <h2 class="news-headline">Pioneer Technical Institute Joins National Cleaning Day</h2>
+        <p class="news-excerpt">Pioneer Technical Institute today participated in National Cleaning Day on 26 September 2026.</p>
+        <span class="news-toggle">Read full story
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+    </button>
+
+    <!-- Hidden data for this story — the script reads it and builds the popup. -->
+    <div class="news-full" hidden>
+      <p>
+      Pioneer Technical Institute today participated in National Cleaning Day on 26 September 2026.
+Students cleaned streets and trenches along Kaliro Road in Iganga District.
+The activity promoted environmental cleanliness and community responsibility.
+      </p>
+      <div class="related-images">
+        <img src="../assets/uploads/file_00000000a7688211b2e99e6a32e9fa46.png" alt="Related image 1" loading="lazy">
+        <img src="../assets/uploads/file_0000000004148211b4efe3b92e656850.png" alt="Related image 2" loading="lazy">
+        <img src="../assets/uploads/file_00000000682482089364aa2853e53cbb.png" alt="Related image 3" loading="lazy">
+        <img src="../assets/uploads/file_00000000b1148211b1e5b85809192654.png" alt="Related image 4" loading="lazy">
+      </div>
+    </div>
+  </article>
+
+  <article class="news-item">
+    <button class="news-summary">
+      <div class="news-thumb">
+        <img src="https://picsum.photos/id/1025/900/600" alt="Headline 2 photo" loading="lazy">
+        <span class="news-tag">News</span>
+      </div>
+      <div class="news-summary-text">
+        <h2 class="news-headline">Second Headline Goes Here</h2>
+        <p class="news-excerpt">A short one-line teaser about the story goes here.</p>
+        <span class="news-toggle">Read full story
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+    </button>
+
+    <div class="news-full" hidden>
+      <p>Full article text for the second story goes here.</p>
+      <div class="related-images">
+        <img src="https://picsum.photos/id/1035/600/400" alt="Related image 1" loading="lazy">
+        <img src="https://picsum.photos/id/1041/500/650" alt="Related image 2" loading="lazy">
+        <img src="https://picsum.photos/id/1043/650/500" alt="Related image 3" loading="lazy">
+        <img src="https://picsum.photos/id/1044/500/500" alt="Related image 4" loading="lazy">
+      </div>
+    </div>
+  </article>
+
+  <!-- Add as many <article class="news-item"> blocks as you like — the CSS and -->
+  <!-- JS below handle any number of stories with no extra wiring. -->
+
 </section>
+
+<!-- Popup / modal that every story reuses -->
+<div class="news-modal-backdrop" id="newsModalBackdrop">
+  <div class="news-modal" role="dialog" aria-modal="true">
+    <button class="news-modal-close" id="newsModalClose" aria-label="Close">&times;</button>
+    <img class="news-modal-img" id="newsModalImg" src="" alt="">
+    <div class="news-modal-body">
+      <h2 id="newsModalHeadline"></h2>
+      <div id="newsModalContent"></div>
+    </div>
+  </div>
+</div>
 
 <footer class="site-footer" id="site-footer"></footer>
 
@@ -50,6 +121,57 @@ document.addEventListener("DOMContentLoaded", async () => {
     emptyState(grid, "No news posts yet — add the first one from the control panel.");
   }
 });
+
+    (function () {
+    const backdrop = document.getElementById('newsModalBackdrop');
+    const modalImg = document.getElementById('newsModalImg');
+    const modalHeadline = document.getElementById('newsModalHeadline');
+    const modalContent = document.getElementById('newsModalContent');
+    const closeBtn = document.getElementById('newsModalClose');
+
+    // Add a "Related Photos" heading above the related-images grid, once.
+    function addRelatedHeading(container) {
+      const grid = container.querySelector('.related-images');
+      if (grid && !container.querySelector('.related-heading')) {
+        const h = document.createElement('h3');
+        h.className = 'related-heading';
+        h.textContent = 'Related Photos';
+        grid.parentNode.insertBefore(h, grid);
+      }
+    }
+
+    // Event delegation: works for any number of .news-item cards,
+    // including ones added later.
+    document.addEventListener('click', (e) => {
+      const summary = e.target.closest('.news-summary');
+      if (summary) {
+        const item = summary.closest('.news-item');
+        const thumbSrc = item.querySelector('.news-thumb img').src;
+        const headline = item.querySelector('.news-headline').textContent;
+        const full = item.querySelector('.news-full');
+
+        modalImg.src = thumbSrc;
+        modalHeadline.textContent = headline;
+        modalContent.innerHTML = full.innerHTML;
+        addRelatedHeading(modalContent);
+
+        backdrop.classList.add('active');
+        modalContent.parentElement.scrollTop = 0;
+        return;
+      }
+
+      if (e.target === backdrop) closeModal();
+      if (e.target.closest('#newsModalClose')) closeModal();
+    });
+
+    function closeModal() {
+      backdrop.classList.remove('active');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
 </script>
 </body>
 </html>
